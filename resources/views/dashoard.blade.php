@@ -13,14 +13,13 @@
     <div class="row">
         <div class="col-md-12">
             
-           
-            
             <table class="table table-bordered">
 
                 @for ($i = 0; $i < count($data["data"]); $i++)
                 <tr>
                     <td>{{ $data["data"][$i]["id"] }}</td>
                     <td>{{ $data["data"][$i]["first_name"] }} {{ $data["data"][$i]["last_name"] }}</td>
+                    <td>{{ $data["data"][$i]["team"]["full_name"] }} </td>
                 </tr>
             @endfor
 
