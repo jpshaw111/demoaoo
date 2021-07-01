@@ -26,6 +26,12 @@ class UserController extends Controller
     public function userDashboard(Request $request) {
         $page = $request->input('per_page');
         $start = $request->input('page');
+        if(empty($page)) {
+            $page= 5;
+            $start=0;
+        } else {
+            
+        }
         $ch = $this->curl_handler($page, $start);
         $result = curl_exec($ch);
         $data = array();
